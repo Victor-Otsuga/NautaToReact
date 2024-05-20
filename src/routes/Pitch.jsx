@@ -1,8 +1,58 @@
-import {} from 'react';
+import React, { useEffect, useState } from "react";
 import '../css/estilo.scss';
 import astro from "../assets/astronaut.png";
+import data from "../data.json"
+import axios from "axios";
 
-function Sobre() {
+async function getLikes() {
+  const url =
+    "https://youtube-video-info2.p.rapidapi.com/votes?videoId=TpsLsetjxGM";
+  const options = {
+    method: "GET",
+    headers: {
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9",
+      Pragma: "no-cache",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+      "X-RapidAPI-Key": "42549a053bmsh5baaad1b4f3beb1p1d1281jsn1d0618a3a7ef",
+      "X-RapidAPI-Host": "youtube-video-info2.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.text();
+    console.log(result);
+    return <>
+    <h1>{result[2]}</h1>
+    </>;
+  } catch (error) {
+    console.error(error);
+  }
+  
+}
+
+function Sobre() { 
+
+
+  console.log(data)
+  
+  const updatedJSON = {  
+      "views": 3,
+      "likes": 3     
+}
+
+const [data, setData] = useState([]);
+
+useEffect(() => {
+
+  axios.get("../data.json").then((res) => {
+  
+    setData(res.data.books);
+  }); 
+}, []);
+axios.post('../data.json', updatedJSON);
+
   return (
     <>
       <section className="base-sec trd-sec">
