@@ -1,5 +1,5 @@
 import {} from 'react';
-import '../css/estilo.css';
+import '../css/estilo.scss';
 import prot1 from '../assets/prototipo/prot1.png';
 import prot2 from '../assets/prototipo/prot2.png';
 import prot3 from '../assets/prototipo/prot3.png';

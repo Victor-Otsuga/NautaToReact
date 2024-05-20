@@ -1,5 +1,5 @@
 import {} from "react";
-import "../css/estilo.css";
+import "../css/estilo.scss";
 import c1 from "../assets/t1i1.png";
 import c2 from "../assets/t1i2.jpg";
 import c3 from "../assets/t1i3.jpg";
@@ -7,12 +7,47 @@ import c4 from "../assets/t2i2.png";
 import c5 from "../assets/t2i3.png";
 import { useRef } from "react";
 
+
+
 function Contato() {
+  
+  console.log("info = ", result[3])
+  let likes = 0
+  let views = 0
+  
   const email = useRef();
   const msg = useRef();
 
   const getEmail = sessionStorage.getItem("email");
   const getMsg = sessionStorage.getItem("msg");
+
+  async function getLikes() {
+    const url =
+      "https://youtube-video-info2.p.rapidapi.com/votes?videoId=TpsLsetjxGM";
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9",
+        Pragma: "no-cache",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+        "X-RapidAPI-Key": "42549a053bmsh5baaad1b4f3beb1p1d1281jsn1d0618a3a7ef",
+        "X-RapidAPI-Host": "youtube-video-info2.p.rapidapi.com",
+      },
+    };
+  
+    try {
+      const response = await fetch(url, options);
+      const result = await response.text();
+      console.log(result);
+      return <>
+      <h1>{result[2]}</h1>
+      </>;
+    } catch (error) {
+      console.error(error);
+    }
+    
+  }
 
   const handleSubmit = () => {
     let token =
@@ -87,6 +122,7 @@ function Contato() {
               disponíveis, quanto ao wi-fi a forma de logar e o sinal pra mim
               são ruins, nunca consegui logar."
             </p>
+            {getLikes()}
           </div>
         </div>
 

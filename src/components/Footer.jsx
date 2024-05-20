@@ -1,5 +1,5 @@
 import {} from 'react';
-import '../css/estilo.css';
+import '../css/estilo.scss';
 import footerLogo from '../assets/evologo.png';
 function Footer() {
 

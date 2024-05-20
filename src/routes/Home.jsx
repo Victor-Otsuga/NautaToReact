@@ -1,5 +1,5 @@
 import {} from "react";
-import "../css/estilo.css";
+import "../css/estilo.scss";
 import astro from "../assets/astronaut.png";
 import { Link } from "react-router-dom";
 
