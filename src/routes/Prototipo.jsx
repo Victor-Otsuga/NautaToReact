@@ -2,7 +2,7 @@ import {} from 'react';
 import '../css/estilo.scss';
 import prot1 from '../assets/prototipo/prot1.png';
 import prot2 from '../assets/prototipo/prot2.png';
-import prot3 from '../assets/prototipo/prot3.png';
+import prot3 from '../assets/prototipo/newdisplay.png';
 import prot4 from '../assets/prototipo/prot4.png';
 import prot5 from '../assets/prototipo/prot5.png';
 
@@ -39,7 +39,7 @@ function Produtos() {
           <img src={prot3} alt="" className="rasp"/>
       </div>
       <div className="component-desc">
-        <p>Nome: Display TFT</p>
+        <p>Nome: Display RPI</p>
         <p>Função: Exibir para o usuário as imagens do sistema e jogo</p>
       </div>
     </section>
@@ -50,7 +50,7 @@ function Produtos() {
           <img src={prot4} alt="" className="rasp"/>
       </div>
       <div className="component-desc">
-        <p>Integrando desta maneira o Display TFT ao Arduino Esplora podemos exibir para usuário diretamente do controle.</p>
+        <p>Integrando desta maneira o Display RPI ao RaspberryPi podemos exibir para usuário diretamente do controle.</p>
       </div>
     </section>
 

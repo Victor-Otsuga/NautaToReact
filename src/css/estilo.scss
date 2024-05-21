@@ -90,6 +90,12 @@ link {
   h2 {
     text-align: center;
   }
+  .likesInfo {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+   
+  }
 }
 
 .pitch-img {
