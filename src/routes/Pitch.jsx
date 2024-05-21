@@ -4,9 +4,11 @@ import astro from "../assets/astronaut.png";
 import data from "../../backend/dados.json";
 import { AiFillLike, AiFillEye } from "react-icons/ai";
 
+const videoId = "TpsLsetjxGM";
+
+
 async function getLikes() {
-  const url =
-    "https://youtube-video-info2.p.rapidapi.com/votes?videoId=TpsLsetjxGM";
+  const url = `https://youtube-video-info2.p.rapidapi.com/votes?videoId=${videoId}`;
   const options = {
     method: "GET",
     headers: {
@@ -51,6 +53,8 @@ function Sobre() {
     getLikes();
   }, []);
 
+
+  
   return (
     <>
       <section className="base-sec trd-sec">
@@ -59,7 +63,7 @@ function Sobre() {
           <iframe
             width="100%"
             height="250rem"
-            src="https://www.youtube.com/embed/TpsLsetjxGM"
+            src={`https://www.youtube.com/embed/${videoId}`}
             title="Challenge - HC - ICR"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
