@@ -1,4 +1,4 @@
-># CP5-EdgeComputing
+># Nauta innovation and technology
 >Status: Finished✅
 >
 >Nauta is an innovative technological solution developed to face the challenge of improper hospitalizations at the Child and Adolescent Institute,
